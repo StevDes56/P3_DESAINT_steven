@@ -1,0 +1,526 @@
+/*---------------------------general--------------------------------*/
+
+body,input,button{
+    font-family:'Open Sans', sans-serif; 
+    font-size: 1em;
+    line-height: 1.6em;
+    margin:0;
+}
+
+h1, h2, h4{
+  font-family: 'Shrikhand', sans-serif;
+}
+
+
+/*----------rectifier le padding si besoin-------*/
+ #restaurant, footer{
+  padding: 1em 1em;
+}
+
+.bone, #restaurant{
+  background-color:#eee;
+}
+
+.title, .title_section{
+  font-family: sans-serif;
+}
+
+/*------------revoir le dégradé du btn+taille(--left-right----*/
+.btn{
+  border:none;
+  border-radius: 40px;
+  padding: 0.8em 1em;
+  color: white;
+  background: linear-gradient(#FF79DA, #a16be0);
+  box-shadow: 4px 4px 10px gray;
+  position: relative;
+  margin:1em;
+  cursor: pointer;
+  z-index: 1;
+  width:auto;
+}
+
+/*-----ANIMATION DU BOUTON NE FONCTIONNE PAS SUR EDGE------*/
+
+.btn::after{
+  content:".";
+  font-size: 0;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(#FF79DA, #a16be0);
+  box-shadow: 0 2px 4px black;
+  opacity:0;
+  z-index: -1;
+  position: absolute;
+  border-radius: 40px;
+
+}
+
+.btn:hover::after{
+  opacity:1;
+}
+
+ul{
+  list-style: none;
+  margin:unset;
+}
+
+img{
+  object-fit: cover;
+}
+
+a{
+  text-decoration: none;
+  color: unset;
+}
+
+.fa-heart{
+  color: #fff;
+  cursor: pointer;
+  -webkit-text-stroke-width:3px;
+  -webkit-text-stroke-color:black;
+  
+}
+
+/*-----------------RESTE ANIMATION DU COEUR+ALIGNEMENT------------*/
+
+
+
+/*-------------lOADER ANIMATION----------------*/
+
+.loader-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #353535;
+  animation: loader-wrapper 1000ms 4000ms ease-in-out forwards; 
+}
+
+@keyframes loader-wrapper{
+  0%{opacity:1;
+  }
+  100%{
+    opacity:0;
+    height:0;
+    visibility:hidden;
+  }
+}
+
+.loader-box {
+  height: 300px;
+  width: 100%;
+  display:flex; 
+  align-items: center;
+  justify-content: center;
+
+  }
+  
+  @keyframes loader-box{
+  0%{
+  opacity:0;
+  }
+  100%{
+  opacity:0;
+  }
+  }
+
+.icon {
+  font-size: 5rem;
+  transform: scale(1);
+  background-color: rgb(255, 255, 255);
+  border-radius: 150px;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loaderSize 2.5s infinite ease-in-out, loaderColor 7.5s infinite ease-in-out,
+   loaderCircle 1000ms 4000ms ease-in-out forwards ;
+  color: #9356DC;;
+  color: #9356DC;
+  box-shadow: 0 0 15px #fff;
+}
+@keyframes loaderCircle {50% {
+  opacity: 0;
+}
+100% {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+}
+@keyframes loaderSize {
+    0% {
+        transform: scale(1) rotate(0);
+    }
+    16% {
+        transform: scale(0) rotate(0);
+    }
+    50% {
+        transform: scale(1) rotate(0);
+    }
+    80% {
+        transform: scale(1) rotate(-360deg);
+    }
+    100% {
+        transform: scale(1) rotate(-360deg);
+    }
+}
+@keyframes loaderColor {
+    5% {
+        color: #9356DC;
+    }
+    10% {
+        color: #FF79DA;
+    }
+    39% {
+        color: #FF79DA;
+    }
+    
+    40% {
+        color: #9356DC;
+    }
+    100% {
+        color: #9356DC;
+    }
+}
+
+/*----------INDEX-----------------*/
+.index {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  animation: index 1000ms 3500ms linear forwards; 
+}
+
+@keyframes index {
+  100% {
+    height: 100%;
+    visibility: visible;
+  }
+}
+
+
+  /*-----------------haut de page logo-----------------*/
+
+  .logo{
+    margin:1em 0;
+  }
+
+  .logo a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo img{
+    width: 30%;
+    object-fit: cover;
+  }
+
+  .logo i{
+    position: absolute;
+    left: 1em; 
+  }
+  /*------------------ Section Discover----------------*/
+.research_form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:3em;
+  background-color:#eee;
+  box-shadow:inset 0 0.1em 0.3em grey ;
+}
+
+#discover{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#site-search{
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.research_form i{
+align-items: center;
+padding-bottom: 3px;
+color: hsl(34deg 5% 24%);
+}
+
+.title, .subtitle{
+  text-align: center;
+  line-height:1.6em ;
+  width:100%;
+}
+
+.bone{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0 2em 0;
+}
+
+
+
+/*------------------Section Fonctionnement------------------*/
+
+#Fonctionnement{
+  padding: 1em 1em;
+}
+
+.section_choice{
+  display: flex;
+  flex-wrap: wrap;
+  background: #f6f6f6;
+  border-radius: 1em;
+  margin: 1em 0.5em;
+  box-shadow: 0 0.1em 0.2em lightgrey;
+  width: auto;
+  height: auto; 
+  transition: 500ms;
+}
+.section_choice span{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #a256dc;
+  color: white;
+  position: relative;
+  margin-top: 1em;
+  left:-0.5em;
+
+}
+.section_choice i{
+  margin-top: 1.2em;
+  color:grey;
+  margin-left: 0.25em;
+}
+
+.section_choice p{
+  font-weight: bold;
+  margin-left: 1em;
+  margin-left: 0.50em;
+  color: black;
+} 
+
+.section_choice:hover{
+  background-color: #E4D5F6;
+}
+.section_choice:hover i{
+  color: #a256dc;
+}
+
+/*-----------------Section Restaurant------------*/
+
+#restaurant .card img{
+  width: 100%;
+  height: 12em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+#restaurant .card{
+  background-color: #fff;
+  border-radius: 1em;
+  position: relative;
+  box-shadow: 0 2px 4px grey;
+  margin: 1em;
+}
+
+#restaurant .card a{
+  display: block;
+}
+
+#restaurant .new{
+  font-weight: bold;
+  position: absolute;
+  border-radius: 0.30em;
+  background-color:rgb(183, 236, 183) ;
+  color: rgb(67, 189, 132);
+  right:0.75em;
+  top: 0.75em;
+  padding: 0 1em;
+}
+
+#restaurant .card i{
+  font-size:1.5em;
+  position: absolute;
+  right: 0.75em;
+  bottom:1em;
+}
+
+#restaurant .card-information{
+  padding: 0 0.75em 0.5em 0.75em;
+}
+
+#restaurant .card h3, #restaurant .card p{
+  margin: 0;
+}
+
+
+/*-----------------page menus--------------*/
+
+/*----------------REVENIR SUR LA PARTIE LOGO+BEFORE-----------*/
+
+
+.logo:hover i{
+  color: transparent;
+  background-clip: text;
+}
+
+.jacket{
+  display: block;
+  z-index: 0;
+  position: relative;
+}
+
+.jacket img{
+  width: 100%;
+  height: 20em;
+}
+
+.menu{
+  width: 100%;
+  position: relative;
+  background-color: #f6f6f6;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  padding: 0 1em 0 1em;
+  z-index: 1;
+  bottom: 2em;
+}
+
+.menu_title{
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.menu_title h1{
+  font-size: 1.9rem;
+}
+
+#block-card fieldset{
+  border:none;
+}
+
+#block-card fieldset .card {
+  display: flex;
+  align-items: center;
+  border-radius: 1em;
+  background-color: white;
+  box-shadow: 0 1px 5px grey;
+  margin: 1em 0;
+  cursor: pointer;
+  overflow: hidden;
+  width: auto;
+  height: 4rem;
+  padding-left: 1rem;
+}
+
+/*-----voir positionnement fa fas heart------*/
+.menu_title i{
+  font-size: 1.9rem;
+  position: absolute;
+  top:0.4em;
+  right:0.9em;
+}
+
+#block-card fieldset .choice::after{
+  content:"";
+  display: block;
+  border-bottom: #6ec4af 4px solid;
+  width: 60%;
+}
+#block-card fieldset .card_plate--eat{
+  display:block;
+  font-weight:bolder;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#block-card fieldset .card_plate--fill{
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+ 
+}
+
+#block-card fieldset .card_plate{
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+ 
+}
+
+#block-card fieldset .card_price{
+  font-weight:bold;
+  display:flex;
+  margin:0 4px -30px auto;
+}
+#block-card fieldset .card_tick i{
+  color:white;
+  font-size:1em;
+  position:absolute;    
+}
+
+#block-card fieldset .card_tick{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  background-color:#99e2d0;
+  height:4.5rem;
+  width:4rem;
+  left: 100%;
+  
+}
+
+#block-card .button{
+  align-items:center;
+  justify-content:center;
+  display:flex;
+}
+
+
+/*---------------------Footer------------------*/
+
+footer{
+  background-color: #353535;
+  width:100%;
+}
+
+footer ul{
+  list-style: none;
+  padding:0;
+}
+
+footer a{
+  color: #fff;
+}
+
+footer .fas{
+  margin-right: 1em;
+}
+
+.title_footer{
+font-weight: 200;
+font-size: 1em;
+}
+footer .fa-hands-helping{
+  font-size: 0.8em;
+}
