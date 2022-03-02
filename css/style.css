@@ -1,9 +1,7 @@
 /*---------------------------general--------------------------------*/
 
-body,input,button{
+body{
 font-family:'Open Sans', sans-serif; 
-font-size: 1em;
-line-height: 1.6em;
 margin:0;
 }
 
@@ -11,39 +9,53 @@ h1, h2, h4{
 font-family: 'Shrikhand', sans-serif;
 }
 
+main{
+margin:0;
+background-color: #f6f6f6;
+}
 
-/*----------rectifier le padding si besoin-------*/
- #restaurant, footer{
+#restaurant, footer{
 padding: 1em 1em;
+}
+
+#container{
+width:100%;
 }
 
 .bone, #restaurant{
 background-color:#eee;
 }
 
-.title, .title_section{
+.title-teaches{
+margin-left:15px;
+}
+
+.Title_1, .title{
 font-family: sans-serif;
 }
 
-/*------------Bouton qui au survol la couleur de fond s'éclaircit, avec ombre visible----*/
+/*------------ Bouton qui au survol la couleur de fond s'éclaircit, avec ombre visible----*/
 
-.btn{
-border:none;
-border-radius: 40px;
-padding: 0.8em 1em;
+.button{
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 2rem 0 2rem 0;
+margin: 0 auto;
+margin-top: 3rem;
+border-radius: 50px;
+border: none;
+height: 50px;
+background: linear-gradient(#9356DC, #FF79DA);
+box-shadow: 0 6px 10px #0000004b;
 color: white;
-background: linear-gradient(#FF79DA, #a16be0);
-box-shadow: 4px 4px 10px gray;
+width: 60%;
 position: relative;
-margin:1em;
-cursor: pointer;
 z-index: 1;
-width:auto;
 }
+  
 
-/*-----rendre l'effet plus doux au survol, jouer sur l' opacité------*/
-
-.btn::after{
+.button::after{
 content:".";
 font-size: 0;
 opacity: 0;
@@ -57,12 +69,13 @@ opacity:0;
 z-index: -1;
 position: absolute;
 border-radius: 40px;
-
+  
 }
-
-.btn:hover::after{
+  
+.button:hover::after{
 opacity:1;
 }
+/*-------------Fin Bouton------------*/  
 
 ul{
 list-style: none;
@@ -78,7 +91,7 @@ text-decoration: none;
 color: unset;
 }
 
-/*-------------lOADER ANIMATION encore des corrections a faire sur la durée ----------------*/
+/*-------------Loader animation type spinner avant le chargement de ma page + @keyframes ----------------*/
 
 .loader-wrapper {
 width: 100%;
@@ -95,7 +108,7 @@ animation: loader-wrapper 1000ms 4000ms ease-in-out forwards;
 }
 100%{
 opacity:0;
- height:0;
+height:0;
 visibility:hidden;
 }
 }
@@ -106,7 +119,6 @@ width: 100%;
 display:flex; 
 align-items: center;
 justify-content: center;
-
 }
   
 @keyframes loader-box{
@@ -134,6 +146,8 @@ color: #9356DC;;
 color: #9356DC;
 box-shadow: 0 0 15px #fff;
 }
+
+
 @keyframes loaderCircle {50% {
 opacity: 0;
 }
@@ -143,6 +157,7 @@ height: 0;
 opacity: 0;
 overflow: hidden;
 }
+
 
 }
 @keyframes loaderSize {
@@ -162,6 +177,7 @@ transform: scale(1) rotate(-360deg);
 transform: scale(1) rotate(-360deg);
 }
 }
+
 @keyframes loaderColor {
 5% {
 color: #9356DC;
@@ -180,8 +196,10 @@ color: #9356DC;
 color: #9356DC;
 }
 }
+  /*----------------Fin de l' animation spinner----------*/
 
-/*----------Apparition de ma page d' accueil-----------------*/
+/*----------Apparition de ma page d' accueil + @Keyframes-----------------*/
+
 .index {
 width: 100%;
 height: 0;
@@ -197,7 +215,7 @@ visibility: visible;
 }
 
 
-  /*-----------------Haut de page logo-----------------*/
+/*-----------------Haut de page logo-----------------*/
 
 .logo{
 margin:1em 0;
@@ -210,7 +228,7 @@ align-items: center;
 }
 
 .logo img{
-width: 30%;
+width: 60%;
 object-fit: cover;
 }
 
@@ -219,7 +237,7 @@ position: absolute;
 left: 1em; 
 }
 
-  /*------------------Block Découverte et Recherche avec effet d' ombre----------------*/
+/*------------------Block Découverte et Recherche avec effet d' ombre----------------*/
 
 .research_form{
 display: flex;
@@ -252,8 +270,8 @@ color: hsl(34deg 5% 24%);
 
 .title, .subtitle{
 text-align: center;
-line-height:1.6em ;
-width:100%;
+line-height:1em ;
+width:80%;
 }
 
 .bone{
@@ -278,10 +296,9 @@ background: #f6f6f6;
 border-radius: 1em;
 margin: 1em 0.5em;
 box-shadow: 0 0.1em 0.2em lightgrey;
-width: auto;
-height: auto; 
 transition: 500ms;
 }
+
 .section_choice span{
 display:flex;
 align-items: center;
@@ -294,8 +311,8 @@ color: white;
 position: relative;
 margin-top: 1em;
 left:-0.5em;
-
 }
+
 .section_choice i{
 margin-top: 1.2em;
 color:grey;
@@ -320,9 +337,9 @@ color: #a256dc;
 
 #restaurant .card img{
 width: 100%;
-height: 12em;
-border-top-left-radius: 1em;
-border-top-right-radius: 1em;
+max-width:100%;
+height: 200px;
+border-radius:1rem 1rem 0 0;
 }
 
 /*-----------animation zoom sur carte restaurant-------------*/
@@ -356,13 +373,6 @@ top: 0.75em;
 padding: 0 1em;
 }
 
-#restaurant .card i{
-font-size:1.5em;
-position: absolute;
-right: 0.75em;
-bottom:1em;
-}
-
 #restaurant .card-information{
 padding: 0 0.75em 0.5em 0.75em;
 }
@@ -371,14 +381,54 @@ padding: 0 0.75em 0.5em 0.75em;
 margin: 0;
 }
 
+/*-------------Animation bouton like coeur +@keyframes--------------*/
 
-/*-----------------Page menus Restaurant--------------*/
-
-.logo:hover i{
-color: transparent;
-background-clip: text;
+.bouton_like{
+font-size: 25px;
+ position: relative;
+left: 250px;
+top:-45px;
 }
 
+
+#bouton_like  {
+-webkit-text-fill-color: #f6f6f6;
+}
+
+.bouton_like {
+-webkit-text-fill-color: white;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: black; 
+cursor:pointer; 
+}
+
+
+.bouton_like:hover {
+animation: color_fill 1.5s ease-out 1 forwards;
+}
+
+@keyframes color_fill {
+  0% {
+background: linear-gradient(#9356DC, #FF79DA);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+opacity: 0;
+-webkit-text-stroke: unset;
+}
+  100% {
+background: linear-gradient(0deg, #ff79da, #9356dc);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+opacity: 1;
+-webkit-text-stroke: unset;
+}
+}
+/*-------------Fin de l' animation bouton like coeur--------------*/
+
+
+/*-----------------Page menus Restaurant général--------------*/
 .jacket{
 display: block;
 z-index: 0;
@@ -387,292 +437,283 @@ position: relative;
 
 .jacket img{
 width: 100%;
-height: 20em;
+object-fit: cover;
 }
 
-.menu{
-width: 100%;
-position: relative;
+.logo{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.header_menu{
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding-right:3rem;
+}
+
+.Title_1{
+font-size: 20px;
+font-weight:390;
+padding-top: 20px;
+margin-left: 15px;
+}
+
+
+/*---------Surlignement du Titre restaurant de moitié--------*/
+.Title_1{
+border-bottom: 3px solid #99E2D0;
+font-size: 1.3em;
+font-weight: 500;
+width:10%;
+}
+/*-----------Fin de surlignement des titres--------------*/
+
+/*------------Section menus et plats----------------*/
+
+.section-menu{
+border-radius: 50px 50px 0 0;
 background-color: #f6f6f6;
-border-top-left-radius: 2em;
-border-top-right-radius: 2em;
-padding: 0 1em 0 1em;
-z-index: 1;
-bottom: 2em;
-}
-
-.menu_title{
-display: flex;
 position: relative;
-align-items: center;
+top: -50px;
 }
 
-.menu_title h1{
-font-size: 1.9rem;
-}
-
-/*-------------ANIMATION COEUR Remplissage de couleur progressive-----------*/
-
-.fa-heart{
-color: #fff;
-cursor: pointer;
--webkit-text-stroke-width:1.5px;
--webkit-text-stroke-color:#353535; 
-}
-
-.fa-heart:hover {
-animation: heart 2000ms linear both; 
-}
-
-@keyframes heart {
-  0% {  
-background: linear-gradient(#9356DC, #FF79DA);
-background-clip: text;
-color: transparent;
-opacity: 0;
-    
-}
-100% {
-background: linear-gradient(#FF79DA, #9356DC);
-background-clip: text;
-color: transparent;
-opacity: 1;
-}
-}
-
-#block-card fieldset{
-border:none;
-}
-
-#block-card fieldset .card {
+.card_choice{
+margin: 1rem 0.7rem 1rem 0.9rem;
+box-shadow: 0 1px 6px;
+border-radius: 1rem;
+background-color: #fff;
 display: flex;
-align-items: center;
-border-radius: 1em;
-background-color: white;
-box-shadow: 0 1px 5px grey;
-margin: 1em 0;
-cursor: pointer;
+width: 92%;
+flex-direction: row-reverse;
+justify-content: flex-end;
 overflow: hidden;
-width: auto;
-height: 4rem;
-padding-left: 1rem;
 }
 
-/*------------Positionnement coeur--------------*/
-
-.menu_title i{
-font-size: 1.9rem;
-position: absolute;
-top:0.4em;
-right:0.9em;
-}
-
-#block-card fieldset .choice::after{
-content:"";
-display: block;
-border-bottom: #6ec4af 4px solid;
-width: 60%;
-}
-
-#block-card fieldset .card input{
-position: relative;
-}
-
-#block-card fieldset .card_plate--eat{
-display:block;
-font-weight:bolder;
+.content{
+display: flex;
+flex-direction: column;
+width: 90%;
+margin-left: 1.5rem;
+white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
-white-space: nowrap;
 }
 
-#block-card fieldset .card_plate--fill{
-display:block;
+.text{
+display: flex;
+justify-content: space-between;
+font-size: 1em;
+}
+.choice_title{
+margin: 1rem 0 0 0;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+font-size: 1em;
+}
+  
+#block-compo{
+width:100%;
+}
+
+.fill{
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+  
+p{
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis; 
+}
+
+/*------Section menuS et plats avec animation------------*/
+
+.fa-check-circle {
+font-size:1.3rem;
+}
+
+.card_choice:hover .fa-check-circle{
+animation:rotation;
+transition-duration: 1s;
+transform:rotate(360deg);  
+}
+
+.price{
+transition: all 500ms ease-in-out;
+}
+ 
+.card_choice:hover .price{
+animation:decalage_prix;
+transition: 500ms ease-out 1 forwards;
+}
+
+.card_choice:hover .check_circle{
+animation:decalage;
+transform:translateY(0);
+visibility:visible;
+width:80px;
+white-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis;
-white-space: nowrap;
- 
+transition:all 500ms ease-in-out; 
 }
 
-#block-card fieldset .card_plate{
-display:block;
-overflow:hidden;
-text-overflow:ellipsis;
-white-space: nowrap;
- 
+.check_circle{
+background: #99E2D0;
+color: #fff;
+border-radius: 0 1rem 1rem 0;
+overflow: hidden;
+visibility: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: all 500ms ease-in-out;
+transform: translate(100px);
+width: 0px;
 }
 
-#block-card fieldset .card_price{
-font-weight:bold;
-display:flex;
-margin:0 4px -30px auto;
-align-items: flex-end;
-}
-#block-card fieldset .card_tick i{
-color:white;
-font-size:1em;
-position:absolute;    
-}
 
-/*-------------Apparition de la petite coche à droite du plat qui coulisse de droit à gauche----*/
+/*-----------@keyframes animation choix des plats-----------*/
 
-#block-card fieldset .card_tick{
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-margin-left:1em;
-background-color:#99e2d0;
-height:4.5rem;
-min-width:0%;
-transform-origin:right;
-width:0px;
-transition: 600ms linear;
-
-  /*--------ANIMATION A REVOIR DELAI TRANSITION card tick page menu selection d' un plat-----*/
-   
+@keyframes decalage_prix{
+from{transform:translate(0%);
 }
-#block-card fieldset .card:hover .card_plate{
-width:100%; 
+  
+to{
+transform:translate(-50%);
+} 
+}
+  
+@keyframes rotation{
+from{
+transform-rotate:(360deg);
+}
+to{
+transform-rotate:(0deg);
+} 
 }
 
-#block-card fieldset .card:hover .card_tick{
-width:100px;
+/*------apparition progressive des menus keyframes----------*/
+
+.choice_3{
+animation: fadeIn 3s ease-in-out both; 
 }
 
-#block-card fieldset .card:hover i{
-transition: 400ms ease-in-out;
-transform: rotate(2turn);
+.choice_2{
+animation: fadeIn 2s ease-in-out both;
 }
 
-#block-card .button{
-align-items:center;
-justify-content:center;
-display:flex;
+.choice_1{
+animation: fadeIn 1s ease-in-out both;
 }
-/*-------------SUIVI MAQUETTE ANIMATION PAGE MENU APPARITION PROGRESSIVE A REVOIR-------------*/
-.choice {
-animation: fadein 600ms 150ms ease-in-out both;
- }
- 
- .choice1 {
- animation: fadein 600ms 300ms ease-in-out both;
- }
- 
- .choice2 {
-animation: fadein 600ms 450ms ease-in-out both;
- }
 
- .choice3 {
- animation: fadein 600ms 600ms ease-in-out both;
- }
- 
- .choice4 {
- animation: fadein 600ms 750ms ease-in-out both;
- }
- 
- .choice5 {
- animation: fadein 600ms 900ms ease-in-out both;
- }
- 
- .choice6 {
- animation: fadein 600ms 1050ms ease-in-out both;
- }
- 
- .choice7 {
- animation: fadein 600ms 1200ms ease-in-out both;
- }
- 
- .choice8{
- animation: fadein 600ms 1350ms ease-in-out both;
- }
- 
- .choice9{
- animation: fadein 600ms 1500ms ease-in-out both;
- }
- 
- @keyframes fadein {
- 0% {
- opacity: 0;
- transform: translateY(30px);
-  }
- 100% {
- opacity: 1;
- transform: translateY(0);
-   }
- }
+@keyframes fadeIn {
+0% {
+opacity: 0;
+transform: translate3d(0, 50%, 0);
+}
+
+100% {
+opacity: 1;
+transform: translate3d(0, 0, 0);
+}
+}
+
+@-webkit-keyframes fadeIn {
+0% {
+opacity: 0;
+transform: translate3d(0, 50%, 0);
+}
+100% {
+opacity: 1;
+transform: translate3d(0, 0, 0);
+}
+}
  
 
 /*---------------------Footer------------------*/
 
 footer{
-  background-color: #353535;
-  width:100%;
+background-color: #353535;
+width:100%;
 }
 
 footer ul{
-  list-style: none;
-  padding:0;
-}
-
-/*-------------CHANGEMENT DE COULEUR DU FOOTER AU SURVOL--------------*/
-
-footer a{
-  color: #fff;
-  transition:color 2s;
-}
-
-footer a:hover{
-  color:#a256dc;
+list-style: none;
+padding:0;
 }
 
 footer .fas{
-  margin-right: 1em;
+margin-right: 1em;
 }
 
 .title_footer{
 font-weight: 200;
 font-size: 1em;
 }
+
 footer .fa-hands-helping{
-  font-size: 0.8em;
+font-size: 0.8em;
 }
 
+/*-------------Footer change de couleur au survol--------------*/
+footer a{
+color: #fff;
+transition:color 2s;
+}
 
+footer a:hover{
+color:#a256dc;
+}
 
-/*------------------DESKOP---------------------*/
+/*----------Fin du Footer-----------*/
+
+/*------------------ VERSION DESKOP---------------------*/
 
 @media screen and (min-width: 992px) {
 .logo img{
 width:40%;
 }
-#Fonctionnement  {
+#Fonctionnement div  {
 display: flex;
-justify-content: space-around;
 width: 100%;
+margin:15px;
 }
     
 #Fonctionnement .title_section {
 text-align:center;
 }
+
 #restaurant .card img {
 height: 18em;
-width:41vh;
+width:100vh;
 }
 
 #restaurant div .card-information{
-flex-direction:column;
-  
+flex-direction:column; 
 }
 
-#block-card .block-compo{
+.jacket img{
+height:400px;
+}
+
+.block-compo{
 display:flex;
 justify-content:center;
 }
 
-#block-card legend.choice{
-margin-left:10px;
-}  
+.menu_cards{
+width:40%
+}
+
+.button{
+width:30%;
+}
 
 footer {
 flex-direction: column;
@@ -689,6 +730,8 @@ margin: 0 1em;
 } 
 }
 
+/*------------Version tablette----------*/
+
 @media screen and (min-width: 768px) {
 
 #Fonctionnement { 
@@ -698,8 +741,7 @@ flex-direction: column;
 }
 
 #Fonctionnement  div {
-width: 60%;
-margin-inline: auto;
+width: 100%;
 }
 
 #restaurant {
@@ -715,7 +757,7 @@ flex-wrap:wrap;
 
 #restaurant div .card {
 flex-basis:35%;
- margin-left:10%;
+margin-left:10%;
 }
 
 #restaurant div .card-information{
@@ -726,9 +768,9 @@ padding:0 4em 1em 0.5em;
 margin:3px;
 }  
 
-#block-card fieldset .card{
-margin:1em 4em;
-width:inherit;
+.block-compo{
+margin:1em 7em;
+width:70%;
 }
 
 footer {
@@ -741,5 +783,5 @@ font-size:1.8em;
 } 
 }
     
-
+  
 
