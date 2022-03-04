@@ -1,8 +1,9 @@
-/*---------------------------general--------------------------------*/
+/*---------------------------général--------------------------------*/
 
 body{
 font-family:'Open Sans', sans-serif; 
-margin:0;
+margin:0 auto;
+font-size: 16px;
 }
 
 h1, h2, h4{
@@ -10,12 +11,16 @@ font-family: 'Shrikhand', sans-serif;
 }
 
 main{
-margin:0;
 background-color: #f6f6f6;
 }
 
 #restaurant, footer{
 padding: 1em 1em;
+}
+
+*{
+  box-sizing:border-box;
+  objectif-fit:cover;
 }
 
 #container{
@@ -287,6 +292,7 @@ padding: 0 0 2em 0;
 
 #Fonctionnement{
 padding: 1em 1em;
+background: white;
 }
 
 .section_choice{
@@ -374,7 +380,7 @@ padding: 0 1em;
 }
 
 #restaurant .card-information{
-padding: 0 0.75em 0.5em 0.75em;
+padding: 1em 0.5em 0.5em 1em;
 }
 
 #restaurant .card h3, #restaurant .card p{
@@ -384,13 +390,13 @@ margin: 0;
 /*-------------Animation bouton like coeur +@keyframes--------------*/
 
 .bouton_like{
-font-size: 25px;
- position: relative;
-left: 250px;
-top:-45px;
+font-size:24px;
+font-weight:100;
+position: absolute;
+bottom: 25px;
+right:20px;      
 }
-
-
+ 
 #bouton_like  {
 -webkit-text-fill-color: #f6f6f6;
 }
@@ -438,6 +444,7 @@ position: relative;
 .jacket img{
 width: 100%;
 object-fit: cover;
+height:17em;
 }
 
 .logo{
@@ -452,6 +459,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding-right:3rem;
+position: relative;
 }
 
 .Title_1{
@@ -478,6 +486,7 @@ border-radius: 50px 50px 0 0;
 background-color: #f6f6f6;
 position: relative;
 top: -50px;
+width:100%;
 }
 
 .card_choice{
@@ -640,7 +649,6 @@ transform: translate3d(0, 0, 0);
 
 footer{
 background-color: #353535;
-width:100%;
 }
 
 footer ul{
@@ -708,7 +716,12 @@ justify-content:center;
 }
 
 .menu_cards{
-width:40%
+width:45%;
+padding-left:15px;
+}
+
+.content{
+margin-left:1rem;
 }
 
 .button{
@@ -764,13 +777,17 @@ margin-left:10%;
 padding:0 4em 1em 0.5em;  
 }  
 
+#restaurant .card img{
+  width:100vh;
+}  
+
 #restaurant .card h3, #restaurant.card p{
 margin:3px;
 }  
 
 .block-compo{
 margin:1em 7em;
-width:70%;
+width:75%;
 }
 
 footer {
