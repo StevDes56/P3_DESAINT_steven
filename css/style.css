@@ -1,6 +1,6 @@
 /*---------------------------général--------------------------------*/
 
-body{
+body, .title_section{
 font-family:'Open Sans', sans-serif; 
 margin:0 auto;
 font-size: 16px;
@@ -19,8 +19,7 @@ padding: 1em 1em;
 }
 
 *{
-  box-sizing:border-box;
-  objectif-fit:cover;
+  box-sizing:border-box; 
 }
 
 #container{
@@ -105,7 +104,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 background-color: #353535;
-animation: loader-wrapper 1000ms 4000ms ease-in-out forwards; 
+animation: loader-wrapper 1000ms 3000ms ease-in-out forwards; 
 }
 
 @keyframes loader-wrapper{
@@ -136,7 +135,7 @@ opacity:0;
 }
 
 .icon {
-font-size: 5rem;
+font-size: 3rem;
 transform: scale(1);
 background-color: rgb(255, 255, 255);
 border-radius: 150px;
@@ -145,7 +144,7 @@ width: 150px;
 display: flex;
 align-items: center;
 justify-content: center;
-animation: loaderSize 2.5s infinite ease-in-out, loaderColor 7.5s infinite ease-in-out,
+animation: loaderSize 2.5s infinite ease-in-out, loaderColor 4.5s infinite ease-in-out,
 loaderCircle 1000ms 4000ms ease-in-out forwards ;
 color: #9356DC;;
 color: #9356DC;
