@@ -40,7 +40,7 @@ font-family: sans-serif;
 
 /*------------ Bouton qui au survol la couleur de fond s'éclaircit, avec ombre visible----*/
 
-.button{
+.bouton{
 display: flex;
 justify-content: center;
 align-items: center;
@@ -59,7 +59,7 @@ z-index: 1;
 }
   
 
-.button::after{
+.bouton::after{
 content:".";
 font-size: 0;
 opacity: 0;
@@ -76,7 +76,7 @@ border-radius: 40px;
   
 }
   
-.button:hover::after{
+.bouton:hover::after{
 opacity:1;
 }
 /*-------------Fin Bouton------------*/  
