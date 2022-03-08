@@ -557,7 +557,7 @@ transition: all 500ms ease-in-out;
  
 .card_choice:hover .price{
 animation:decalage_prix;
-transition: 500ms ease-out 1 forwards;
+transition: 500ms ease-out;
 }
 
 .card_choice:hover .check_circle{
@@ -599,10 +599,10 @@ transform:translate(-50%);
   
 @keyframes rotation{
 from{
-transform-rotate:(360deg);
+transform:rotate (360deg);
 }
 to{
-transform-rotate:(0deg);
+transform:rotate (0deg);
 } 
 }
 
