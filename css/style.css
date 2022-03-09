@@ -67,7 +67,7 @@ left: 0;
 right: 0;
 top: 0;
 bottom: 0;
-background: linear-gradient(#FF79DA, #a16be0);
+background: linear-gradient(#ff93e1, #a16be0);
 box-shadow: 0 2px 4px black;
 opacity:0;
 z-index: -1;
@@ -402,7 +402,7 @@ right:20px;
 
 .bouton_like {
 -webkit-text-fill-color: white;
--webkit-text-stroke-width: 1px;
+-webkit-text-stroke-width: 2px;
 -webkit-text-stroke-color: black; 
 cursor:pointer; 
 }
@@ -637,16 +637,7 @@ transform: translate3d(0, 0, 0);
 }
 }
 
-@-webkit-keyframes fadeIn {
-0% {
-opacity: 0;
-transform: translate3d(0, 50%, 0);
-}
-100% {
-opacity: 1;
-transform: translate3d(0, 0, 0);
-}
-}
+
  
 
 /*---------------------Footer------------------*/
